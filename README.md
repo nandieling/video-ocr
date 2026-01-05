@@ -1,6 +1,8 @@
 # RapidOCR 视频硬字幕提取器
 
 基于 `RapidOCR` + `OpenCV` + `PySide6` 的桌面工具：从视频画面中的硬字幕区域（ROI）识别文字并导出 `SRT` 字幕文件。
+写这个软件主要是为了解决mac端没有gui版，win平台有更好用的开源软件。比如：https://github.com/YaoFANGUK/video-subtitle-extractor 和 https://github.com/timminator/VideOCR
+这两个都是采用 PaddleOCR引擎，目测比RapidOCR引擎效果好。本来打算用PaddleOCR，各种报错。因为没有arm 版 mac，所以没有arm 版软件包。可用pyinstaller自行打包。
 
 ## 功能
 
