@@ -25,6 +25,7 @@ python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -U pip
 pip install PySide6 opencv-python rapidocr_onnxruntime
+pip install opencv-python
 ```
 
 ## 运行
