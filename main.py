@@ -95,7 +95,15 @@ class OCRWorker(QThread):
                         detected_text = ""
                         if result:
                             # 拼接所有检测到的文本行
-                            texts = [line[1] for line in result if line[2] > self.threshold]
+                            texts = []
+                            for line in result:
+                                # RapidOCR score may arrive as str; coerce safely
+                                try:
+                                    score = float(line[2])
+                                except (TypeError, ValueError, IndexError):
+                                    score = 0.0
+                                if score > self.threshold:
+                                    texts.append(line[1])
                             detected_text = " ".join(texts).strip()
                         
                         current_ms = cap.get(cv2.CAP_PROP_POS_MSEC)
